@@ -6,32 +6,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coffee Shop</title>
     <link rel="stylesheet" href="styles.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
 </head>
 
 <body>
 
     <header>
-        <div>
-            <h1>Welcome to the shop!</h1>
-            <h2>Yo</h2>
+        <div class="navbar_container">
+            <div class="navbar_hider_bg">
+                <div class="navbar_hider">
+                    <div>
+                        <button class="show_nav">=</button>
+                        <h1 id="title">Consumptuous Coffee</h1>
+                    </div>
+
+                    <ul class="navbar">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html">About</a></li>
+                        <li><a href="index.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-
-
     </header>
 
     <main>
+        <img src="images\coffeeimage.jpeg" alt="Coffee Image" class="hero_img">
+        <hr>
+        <div>
+            <h1><em>Welcome to the shop!</em></h1>
+            <div class="welcome-text">
+                <h3>Why come share a drink with us?</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis ipsa sapiente, incidunt consequatur
+                    cum, voluptates sunt inventore facere error ex animi iure eius. Amet, excepturi vitae corporis
+                    tempora
+                    eaque ut!</p>
+            </div>
 
+        </div>
+
+
+        <div>
+            <table>
+                <th>
+                    <h2>Our Menu:</h2>
+                </th>
+                <tr>
+                    <th>Black Coffee</th>
+                    <td>$2.50</td>
+                    <td>Cal. 150</td>
+                    <img src="M5 Lab\images\BlackCoffee.jpg" alt="Black Cup of Coffee">
+                </tr>
+                <tr>
+                    <th>Iced Caramel Coffee</th>
+                    <td>$4.75</td>
+                    <td>Cal. 400</td>
+                </tr>
+                <tr>
+                    <th>French Vanilla Coffee</th>
+                    <td>$5.50</td>
+                    <td>Cal. 525</td>
+                </tr>
+            </table>
+        </div>
 
     </main>
 
-
+    <br>
     <footer>
-
-
+        <br>
+        <p>&copy; 2025 Lorem. All rights reserved.</p>
     </footer>
 
 
-
+    <script src="index.js"></script>
 </body>
 
 </html>
