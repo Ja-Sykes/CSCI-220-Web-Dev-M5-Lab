@@ -25,8 +25,9 @@
 
                     <ul class="navbar">
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="index.html">About</a></li>
-                        <li><a href="index.html">Contact</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#Menu">Menu</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
             </div>
@@ -36,42 +37,90 @@
     <main>
         <img src="images\coffeeimage.jpeg" alt="Coffee Image" class="hero_img">
         <hr>
-        <div>
-            <h1><em>Welcome to the shop!</em></h1>
-            <div class="welcome-text">
-                <h3>Why come share a drink with us?</h3>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis ipsa sapiente, incidunt consequatur
-                    cum, voluptates sunt inventore facere error ex animi iure eius. Amet, excepturi vitae corporis
-                    tempora
-                    eaque ut!</p>
+        <section id="about">
+            <div>
+                <h1><em>Welcome to the shop!</em></h1>
+                <div class="welcome-text">
+                    <h3>Why come share a drink with us?</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis ipsa sapiente, incidunt
+                        consequatur
+                        cum, voluptates sunt inventore facere error ex animi iure eius. Amet, excepturi vitae corporis
+                        tempora
+                        eaque ut!</p>
+                </div>
             </div>
+            <div class="welcome-text">
+                <h3>Where we started?</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque suscipit totam nostrum quisquam non,
+                    repellendus animi? Odio molestiae numquam libero temporibus blanditiis, fuga impedit voluptates.
+                    Assumenda sequi voluptatibus dolor animi.</p>
+            </div>
+        </section>
 
+        <hr>
+
+        <section id="Menu">
+            <div>
+                <table id="menu">
+                    <caption>
+                        <h2>Our Menu:</h2>
+                    </caption>
+                    <thead>
+                        <tr>
+                            <th>Items</th>
+                            <th>Price</th>
+                            <th>Calories</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Black Coffee</td>
+                            <td>$2.50</td>
+                            <td>Cal. 150</td>
+                        </tr>
+                        <tr>
+                            <td>Iced Caramel Coffee</td>
+                            <td>$4.75</td>
+                            <td>Cal. 400</td>
+                        </tr>
+                        <tr>
+                            <td>French Vanilla Coffee</td>
+                            <td>$5.50</td>
+                            <td>Cal. 525</td>
+                        </tr>
+                        <tr>
+                            <td>Vanilla Frappuccino</td>
+                            <td>$4.00</td>
+                            <td>Cal. 350</td>
+                        </tr>
+                    </tbody>
+                </table>
+        </section>
+        <!-- Image aligned to the right of the table -->
+        <div class="menu-image">
+            <img src="images/BlackCoffee.jpg" alt="Black Cup of Coffee">
+        </div>
         </div>
 
+        <hr>
 
-        <div>
-            <table>
-                <th>
-                    <h2>Our Menu:</h2>
-                </th>
-                <tr>
-                    <th>Black Coffee</th>
-                    <td>$2.50</td>
-                    <td>Cal. 150</td>
-                    <img src="M5 Lab\images\BlackCoffee.jpg" alt="Black Cup of Coffee">
-                </tr>
-                <tr>
-                    <th>Iced Caramel Coffee</th>
-                    <td>$4.75</td>
-                    <td>Cal. 400</td>
-                </tr>
-                <tr>
-                    <th>French Vanilla Coffee</th>
-                    <td>$5.50</td>
-                    <td>Cal. 525</td>
-                </tr>
-            </table>
-        </div>
+        <section id="contact">
+            <h2>Contact Us!</h2>
+            <div class="form-wrapper">
+                <form action="" method="post" class="form">
+                    <label for="name">Name</label>
+                    <input type="text" name="Name" id="Name">
+                    <br>
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email">
+                    <br>
+                    <label for="message">Thoughts?</label>
+                    <textarea name="message" id="message"></textarea>
+                    <br>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </section>
 
     </main>
 

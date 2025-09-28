@@ -69,6 +69,34 @@ hr {
     text-align: left;
 }
 
+/* Table */
+/* Table styling */
+#menu {
+    border-collapse: separate;
+    border-spacing: 15px;
+    /* space between cells */
+    text-align: center;
+    margin-right: 20px;
+}
+
+#menu th,
+#menu td {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+}
+
+/* Layout: table + image side by side */
+#menu,
+.menu-image {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.menu-image img {
+    width: 200px;
+    border-radius: 10px;
+}
+
 
 
 /***** Mobile ******/
@@ -107,7 +135,7 @@ hr {
 
     /* Hero image */
     .hero_img {
-        width: 100vw;
+        width: 97vw;
         height: 15rem;
     }
 
@@ -115,6 +143,34 @@ hr {
         padding-left: 5vw;
         margin: 0 2%
     }
+
+    /* Menu Table Images */
+    .blackcoffee {
+        width: 25vw;
+        height: 25%;
+        float: right;
+    }
+
+    .form-wrapper {
+        display: flex;
+        justify-content: center;
+        /* horizontal */
+        align-items: center;
+        /* vertical */
+        height: 25vh;
+        padding-bottom: 10%;
+        /* full screen height */
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        max-width: 400px;
+        text-align: left;
+    }
+
+
 }
 
 
