@@ -1,3 +1,14 @@
+/***
+    1. Update Menu/Nav bar
+    2. Mobile Menu / Darken hero image
+    3. Add desktop image carousel
+    4. Addition contact info in footer
+    5.
+
+***/
+
+
+
 /*** General Styling ***/
 body {
     background-color: #F3E9DC;
@@ -24,6 +35,9 @@ body {
     margin: 0;
     background-color: #C19A6B;
     /* caramel gold bar */
+    position: relative;
+    z-index: 100000;
+    /* ensure navbar sits well above the hero image */
 }
 
 .navbar li a {
@@ -37,9 +51,67 @@ body {
     display: none;
 }
 
+/*FOR THIS NAV BAR AREA, I DID ASK PILOT TO MAKE IT CENTER. HENCE EXTRA COMMENTS AND CODE THAT ISN'T MY STTLE.
+/* Make top level nav span full width and align children horizontally */
+.navbar_container,
+.top_level_nav,
+.top_level_nav .row {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding-bottom: 10%;
+}
+
+.top_level_nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* center by default; title will expand */
+    padding: 0 1rem;
+}
+
+.top_level_nav .row {
+    display: flex;
+    flex-wrap: nowrap;
+    /* keep everything on one line */
+    align-items: center;
+    justify-content: space-between;
+    /* evenly space left/title/right */
+    width: 100%;
+}
+
+/* Make the H1 title take remaining space and center itself */
+.top_level_nav h1#title {
+    flex: 1 1 auto;
+    text-align: center;
+    margin: 0;
+}
+
+/* Keep icon columns from growing; align left and right */
+.top_level_nav .row>.col {
+    flex: 0 0 auto;
+}
+
+.flavicons {
+    gap: 1rem;
+    color: #3E2723;
+    /* icon color */
+    display: flex;
+    align-items: center;
+}
+
+.flavicons i {
+    font-size: 1.15rem;
+    cursor: pointer;
+}
+
 .hero_img {
-    width: 70vw;
+    width: 100vw;
     height: 30vh;
+    position: relative;
+    top: 5rem;
+    z-index: 0;
+    /* ensure hero sits under header/nav */
 }
 
 hr {
@@ -90,6 +162,7 @@ hr {
 .menu-image {
     display: inline-block;
     vertical-align: top;
+    padding-top: 15%;
 }
 
 .menu-image img {
@@ -99,23 +172,70 @@ hr {
     /* caramel frame */
 }
 
+
+
+/** Slide Show **/
+.slideshow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+
+.slideshow img {
+    width: 25vw;
+    height: 50vh;
+}
+
 /***** Mobile ******/
-@media (max-width: 767px) {
+@media (max-width: 768px) {
+
+    .navbar_container {
+        background-color: #c79a6b;
+        height: 8vh;
+        width: 100vw;
+        padding-top: 2.5%;
+    }
+
+    /* mobile adjustments for top_level_nav handled by other rules */
+
+    .flavicons {
+        padding: 3%;
+    }
+
+    #title {
+        margin-right: 5%;
+        font-size: 1.75rem;
+        color: white;
+    }
+
     .navbar {
         display: none;
+        position: absolute;
+        /* position dropdown within the fixed header container */
+        top: 56px;
+        /* sit just below the fixed header */
+        left: 0;
+        right: 0;
+        width: 100%;
         flex-direction: column;
         list-style-type: none;
         padding: 3%;
         margin: 0;
-        background-color: #A47551;
+        background-color: rgba(164, 117, 81, 0.98);
+        /* slightly opaque so it overlays cleanly */
         /* mocha tan */
         border: solid 9px #4B2E2A;
         /* espresso border */
+        z-index: 10001;
+
     }
 
     .navbar li {
-        margin: 5% 0%;
+        margin: 3% 0%;
         font-size: 1.25rem;
+
     }
 
     .navbar li a {
@@ -125,7 +245,9 @@ hr {
 
     .show_nav {
         display: block;
+        border-top: 3%;
     }
+
 
     body {
         text-align: center;
@@ -135,13 +257,30 @@ hr {
     }
 
     .hero_img {
-        width: 97vw;
-        height: 15rem;
+        width: 100vw;
+        height: 13rem;
+        z-index: 0;
+        position: relative;
+        top: 0;
+        /* I guess there is a filter to darken it? Let's go */
+        filter: brightness(50%);
     }
+
+    .hero_img_text {
+        position: relative;
+        top: -185px;
+        color: white;
+    }
+
 
     .welcome-text {
         padding-left: 5vw;
         margin: 0 2%;
+    }
+
+
+    .bottom_needs_up {
+        margin-bottom: -12%;
     }
 
     .blackcoffee {
@@ -150,6 +289,36 @@ hr {
         float: right;
     }
 
+
+    /*Slide show */
+    .slideshow img {
+        width: 50vw;
+        height: 35vh;
+    }
+
+    .button_left {
+        width: 20%;
+        align-self: center;
+    }
+
+    .button_right {
+        width: 20%;
+        align-self: center;
+    }
+
+    .buttonL {
+        width: 65%;
+        height: 7vh;
+        border-radius: 25%;
+    }
+
+    .buttonR {
+        width: 65%;
+        height: 7vh;
+        border-radius: 25%;
+    }
+
+
     .form-wrapper {
         display: flex;
         justify-content: center;
@@ -157,6 +326,7 @@ hr {
         height: 25vh;
         width: 100vw;
         padding-bottom: 10%;
+        margin-top: 15%;
     }
 
     .form {
@@ -241,3 +411,14 @@ footer {
     color: #C19A6B;
     /* caramel highlight */
 }
+
+@media (max-width: 413px) {
+    #title {
+        font-size: 1.5rem;
+    }
+}
+
+
+
+
+@media (min-width: 1024px) {}

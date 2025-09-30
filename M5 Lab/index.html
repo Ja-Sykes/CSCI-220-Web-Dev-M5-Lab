@@ -5,12 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coffee Shop</title>
+    <!--CSS Link-->
     <link rel="stylesheet" href="styles.css">
 
+    <!-- JQUERY 2 Flavicon for Footer-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Flaticons-->
+    <!--Notify-->
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+    <!--Share-->
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+    <!--Search-->
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
 
+    <!--Bootstrap-->
 
+    <!-- Bootstrap CSS (CDN) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoY9F6kM7Q2b8FvZlAUaF0kK0zYt+2QvZ6jIW3" crossorigin="anonymous">
 
 </head>
 
@@ -20,25 +36,51 @@
         <div class="navbar_container">
             <div class="navbar_hider_bg">
                 <div class="navbar_hider">
-                    <div>
-                        <button class="show_nav">=</button>
-                        <h1 id="title">Consumptuous Coffee</h1>
+                    <div class="top_level_nav container_fluid">
+                        <div class="row justify-content-center align-items-center">
+                            <div class="col-2 d-flex justify-content-center">
+                                <button class="show_nav"><i class="fi fi-rr-menu-burger"></i></button>
+                            </div>
+                            <div class="col-4 d-flex justify-content-center">
+                                <h1 id="title">Consumptuous Coffee</h1>
+                            </div>
+                            <div class="col-4 d-flex justify-content-end">
+                                <div class="flavicons d-flex gap-3 align-items-center">
+                                    <i class="fi fi-rs-bell-notification-social-media"></i>
+                                    <i class="fi fi-rs-share"></i>
+                                    <i class="fi fi-rr-search"></i>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-
-                    <ul class="navbar">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#Menu">Menu</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
                 </div>
+
+                <ul class="navbar">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#Menu">Menu</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+
+
             </div>
         </div>
+
     </header>
 
     <main>
-        <img src="images\coffeeimage.jpeg" alt="Coffee Image" class="hero_img">
+
+        <div class="bottom_needs_up"> <!-- I litreally just need to bring this div's bottom up because it is too low.-->
+            <img src="images\coffeeimage.jpeg" alt="Coffee Image" class="hero_img">
+            <div class="hero_img_text">
+                <h2>Consumptuous Coffee</h2>
+                <p>Bringing originality to your cafe</p>
+            </div>
+
+        </div>
+
         <hr>
+
         <section id="about">
             <div>
                 <h1><em>Welcome to the shop!</em></h1>
@@ -82,33 +124,124 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Black Coffee</td>
+                            <td class="black_coffee">Black Coffee</td>
                             <td>$2.50</td>
                             <td>150</td>
                         </tr>
                         <tr>
-                            <td>Iced Caramel Coffee</td>
+                            <td class="carmel_coffee">Iced Caramel Coffee</td>
                             <td>$4.75</td>
                             <td>400</td>
                         </tr>
                         <tr>
-                            <td>French Vanilla Coffee</td>
+                            <td class="french_coffee">French Vanilla Coffee</td>
                             <td>$5.50</td>
                             <td>525</td>
                         </tr>
                         <tr>
-                            <td>Vanilla Frappuccino</td>
+                            <td class="vanilla_coffee">Vanilla Frappuccino</td>
                             <td>$4.00</td>
                             <td>350</td>
                         </tr>
                     </tbody>
                 </table>
+
+
+                <!-- OKAY, idea on how to do the carousel.
+                1. create a parent div. for general container.
+                2. another div/button, for left arrow -1 index.
+                3. center div foor images. I want to create a pre-set of images in the array. Ofc proof check 0 cant 
+                go -1. re learn how to do an image caption.
+                4. right div for right button so +1
+        -->
+
+                <script>
+                    $(document).ready(function () {
+                        let index = 0; // start at first item
+                        let items = [
+                            "images/BlackCoffee.jpg",
+                            "images/icedcoffeeG.png",
+                            "images/frenchvanilla.jpg",
+                            "images/frappuccino.jpeg"
+                        ];
+
+                        // function to update highlights
+                        // Lowkey asked GPT why it didn't update per click, it said bc the script only runs once. So "we(lol)" added this.
+                        function updateHighlights() {
+                            // black coffee
+                            if (index === 0) {
+                                $(".black_coffee").css("color", "#C6A5A3");
+                            } else {
+                                $(".black_coffee").css("color", "#3E2723");
+                            }
+                            // caramel coffee
+                            if (index === 1) {
+                                $(".carmel_coffee").css("color", "#C6A5A3");
+                            } else {
+                                $(".carmel_coffee").css("color", "#3E2723");
+                            }
+                            // french coffee
+                            if (index === 2) {
+                                $(".french_coffee").css("color", "#C6A5A3");
+                            } else {
+                                $(".french_coffee").css("color", "#3E2723");
+                            }
+                            // vanilla coffee
+                            if (index === 3) {
+                                $(".vanilla_coffee").css("color", "#C6A5A3");
+                            } else {
+                                $(".vanilla_coffee").css("color", "#3E2723");
+                            }
+                        }
+
+                        // left button
+                        $(".buttonL").click(function () {
+                            index = (index - 1 + items.length) % items.length;
+                            $("#menu_display").attr("src", items[index]);
+                            updateHighlights();
+                        });
+
+                        // right button
+                        $(".buttonR").click(function () {
+                            index = (index + 1) % items.length;
+                            $("#menu_display").attr("src", items[index]);
+                            updateHighlights();
+                        });
+
+                        // set initial image + highlight
+                        $("#menu_display").attr("src", items[index]);
+                        updateHighlights();
+                    });
+                </script>
+
+
+
+
+                <div class="slideshow">
+                    <div class="button_left">
+                        <button class="buttonL"><i class="fi fi-rr-arrow-left"></i></button>
+                    </div>
+
+                    <div>
+                        <img src="menu_item" alt="Menu Items Display" id="menu_display">
+                    </div>
+
+                    <div class="button_right">
+                        <button class="buttonR"><i class="fi fi-rr-arrow-right"></i></button>
+                    </div>
+
+                </div>
+
+
         </section>
         <!-- Image aligned to the right of the table -->
+        <!-- -->
+
         <div class="menu-image">
-            <img src="images/BlackCoffee.jpg" alt="Black Cup of Coffee">
+            <img src="images\logo.png" alt="Black Cup of Coffee">
         </div>
-        </div>
+
+
 
         <hr>
 
